@@ -2,7 +2,7 @@
 <html lang="de"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Datenschutzerklärung für Velvet: Music Player. Informationen zu lokalen Daten, Accounts, Musikprovidern, Lyrics, Speicherdauer und deinen Rechten.">
+<meta name="description" content="Datenschutzerklärung für Velvet: Music Player. Informationen zu lokalen Daten, Velvet-Account und Cloud-Synchronisation, Google-Anmeldung, Musikprovidern, Lyrics, Speicherdauer und deinen Rechten.">
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; base-uri 'none'; form-action 'none'">
 <title>Datenschutzerklärung · Velvet: Music Player</title>
@@ -13,125 +13,182 @@
 <a class="skip" href="#inhalt">Zum Inhalt</a>
 <header class="site-header"><div class="wrap"><a class="brand" href="../" aria-label="Velvet Startseite">velvet<span>·</span></a><a class="header-link" href="https://github.com/mikabrawlstars/velvet-music-player">Öffentliches Projekt</a></div></header>
 <main class="wrap" id="inhalt">
-<div class="hero"><div class="eyebrow">Velvet: Music Player</div><h1>Datenschutzerklärung</h1><p class="lead">Welche Daten Velvet verarbeitet, was auf deinem Gerät bleibt und wann externe Dienste beteiligt sind.</p><p class="meta">Stand: <time datetime="2026-09-25">25. September 2026</time> · Sprache: Deutsch</p></div>
-<div class="notice"><strong>Aktueller Entwicklungsstand: lokaler Betrieb</strong><p>Velvet verwendet derzeit ein Backend auf deinem eigenen Gerät und eine lokale PostgreSQL-Datenbank. Es gibt kein öffentlich betriebenes Velvet-Account- oder Cloud-Backend. Externe Musik-, Video- und Lyrics-Dienste können trotzdem über das Internet angesprochen werden.</p><p>Diese Erklärung beschreibt diesen Stand. <strong>Vor einem öffentlichen App-Release und vor der Einführung eines Cloud-Backends muss sie geprüft und aktualisiert werden.</strong></p></div>
+<div class="hero"><div class="eyebrow">Velvet: Music Player</div><h1>Datenschutz&shy;erklärung</h1><p class="lead">Welche Daten Velvet verarbeitet, was auf deinem Gerät bleibt, was mit deinem Velvet-Account synchronisiert wird und wann externe Dienste beteiligt sind.</p><p class="meta">Stand: <time datetime="2026-11-05">5. November 2026</time> · gilt für Velvet ab Version 2.14 · Sprache: Deutsch</p></div>
+<div class="notice"><strong>Auf einen Blick</strong>
+<table class="overview" aria-label="Übersicht: wo welche Daten verarbeitet werden">
+<tr><th scope="row">Nur auf deinem Gerät</th><td>Musikdateien, Cover-Dateien, Dateipfade und eigene TTML-Lyrics – immer. Ohne Account auch Bibliothek, Hörverlauf und Einstellungen.</td></tr>
+<tr><th scope="row">Velvet-Server in Frankfurt<br><span class="fine">nur mit Velvet-Account</span></th><td>Account und Profil, Bibliothek, Einstellungen, Hörverlauf und Statistiken, Suchverlauf und Continuity. Bei Google-Anmeldung zusätzlich Google-Kennung und E-Mail-Adresse.</td></tr>
+<tr><th scope="row">Drittanbieter<br><span class="fine">nur wenn du die Funktion nutzt</span></th><td>Google (Anmeldung, Musikvideos), Spotify, TIDAL, Spicy Lyrics und Microsoft Store – jeweils nur die für die Anfrage nötigen Daten.</td></tr>
+<tr><th scope="row">Gibt es nicht</th><td>Werbung, Tracking, externe Produktanalyse und Verkauf von Daten.</td></tr>
+</table>
+<p class="fine">Einzelheiten stehen in den Abschnitten unten.</p></div>
 <div class="layout">
 <nav class="toc" aria-label="Inhaltsverzeichnis"><h2>Auf dieser Seite</h2><ol>
 <li><a href="#verantwortlich">01 · Verantwortlicher</a></li>
-<li><a href="#lokal">02 · Lokale Verarbeitung</a></li>
-<li><a href="#zwecke">03 · Zwecke &amp; Rechtsgrundlagen</a></li>
-<li><a href="#dienste">04 · Externe Dienste</a></li>
-<li><a href="#speicherdauer">05 · Speicherdauer</a></li>
-<li><a href="#sicherheit">06 · Datensicherheit</a></li>
-<li><a href="#rechte">07 · Rechte &amp; Löschung</a></li>
-<li><a href="#website">08 · Diese Website</a></li>
-<li><a href="#kontakt">09 · Kontakt</a></li>
-<li><a href="#aenderungen">10 · Änderungen</a></li>
+<li><a href="#lokal">02 · Daten auf deinem Gerät</a></li>
+<li><a href="#cloud">03 · Velvet-Account &amp; Cloud</a></li>
+<li><a href="#zwecke">04 · Zwecke &amp; Rechtsgrundlagen</a></li>
+<li><a href="#dienste">05 · Externe Dienste</a></li>
+<li><a href="#speicherdauer">06 · Speicherdauer</a></li>
+<li><a href="#sicherheit">07 · Datensicherheit</a></li>
+<li><a href="#rechte">08 · Rechte &amp; Löschung</a></li>
+<li><a href="#website">09 · Diese Website</a></li>
+<li><a href="#kontakt">10 · Kontakt</a></li>
+<li><a href="#aenderungen">11 · Änderungen</a></li>
 </ol></nav>
 <article aria-label="Datenschutzerklärung für Velvet">
 <section id="verantwortlich"><h2>1. Verantwortlicher und Geltungsbereich</h2>
-<p>Verantwortlicher für die hier beschriebenen, von ihm vorgenommenen Verarbeitungen im Zusammenhang mit <strong>Velvet: Music Player</strong> und dieser Projektseite ist:</p>
+<p>Verantwortlicher für die hier beschriebenen Verarbeitungen im Zusammenhang mit <strong>Velvet: Music Player</strong>, dem Velvet-Account- und Synchronisationsdienst und dieser Projektseite ist:</p>
 <address class="contact"><strong>Mika Spangenberg</strong><br><a href="mailto:privacy.velvetmusic@gmail.com">privacy.velvetmusic@gmail.com</a></address>
-<p>Die Erklärung gilt für den derzeitigen Windows-Desktop-Player und diese öffentliche Informationsseite. Sie unterscheidet zwischen Daten auf deinem Gerät, von dir ausgelösten Verbindungen zu Drittanbietern und Daten, die bei einer Kontaktaufnahme oder beim Besuch dieser Seite anfallen.</p>
-<p>Der Entwickler erhält durch die normale lokale Nutzung keinen Fernzugriff auf deine Bibliothek, deinen lokalen Account oder deine Datenbank. Ein lokal angelegter Velvet-Account ist derzeit kein Account bei einem öffentlichen Velvet-Cloud-Dienst.</p>
+<p>Die Erklärung gilt für den Windows-Desktop-Player, unabhängig davon, ob er über den Microsoft Store oder als Installationsdatei bezogen wurde. Sie gilt außerdem für den Velvet-Server, mit dem angemeldete Accounts synchronisiert werden, und für diese öffentliche Informationsseite. Sie unterscheidet zwischen Daten, die nur auf deinem Gerät verarbeitet werden, Daten auf dem Velvet-Server und von dir ausgelösten Verbindungen zu Drittanbietern.</p>
+<p>Ohne Anmeldung („Gastmodus“) bleibt deine Bibliothek ausschließlich auf deinem Gerät. Auf Daten auf deinem Rechner hat der Entwickler keinen Fernzugriff.</p>
 </section>
 
-<section id="lokal"><h2>2. Welche Daten lokal verarbeitet werden</h2>
-<p>Die folgenden Daten werden – abhängig von den genutzten Funktionen – im lokalen Benutzerprofil der App und im lokalen Backend einschließlich PostgreSQL gespeichert. Sie werden nicht automatisch an einen zentralen Velvet-Server übertragen.</p>
+<section id="lokal"><h2>2. Daten auf deinem Gerät</h2>
+<p>Die folgenden Daten werden – abhängig von den genutzten Funktionen – im lokalen Benutzerprofil der App und im mitgelieferten lokalen Hintergrunddienst gespeichert. Ohne Anmeldung werden sie nicht an den Velvet-Server übertragen. Was bei einer Anmeldung synchronisiert wird, beschreibt <a href="#cloud">Abschnitt 3</a>.</p>
 <dl>
-<dt>Velvet-Account und Anmeldung</dt><dd>Account-ID, Username, Display Name, optionales Avatarbild, Account-Rolle und Erstellungszeitpunkt. Zur Anmeldung gehören ein gesalzener Passwort-Hash und Sitzungsinformationen mit Ablaufzeit. Für die Registrierung ist derzeit keine E-Mail-Adresse erforderlich. Das Profil wird nicht als öffentliches Social-Profil veröffentlicht.</dd>
-<dt>Mediathek und Einstellungen</dt><dd>Favoriten, eigene und intelligente Playlists, Track-Zuordnungen, Queue, Wiedergabeposition und Einstellungen, etwa Sprache, Erscheinungsbild, bevorzugter Provider, Audio- und Lyrics-Optionen. Tracks erhalten eine eigene Velvet-Identität; zugehörige Quellen können lokale Dateien, Spotify oder TIDAL sein.</dd>
-<dt>Hörverhalten, Stats und Replay</dt><dd>Gehörte Unified Tracks, Zeitpunkte, tatsächlich erfasste Hörzeit, qualifizierte Plays, Playcounts und zuletzt abgespielte Tracks. Daraus berechnet Velvet persönliche Statistiken, Jahresauswertungen und Empfehlungen. Auch Angaben wie „Mehr davon“, „Weniger davon“ oder gesperrte Songs und Artists werden berücksichtigt.</dd>
-<dt>Suchverlauf</dt><dd>Die letzten Suchbegriffe und Suchzeitpunkte, bei einem angemeldeten Nutzer dem lokalen Account zugeordnet. Suchanfragen können außerdem für die jeweilige Suche an die in Abschnitt 4 genannten Katalogdienste gelangen.</dd>
-<dt>Continuity / Handoff</dt><dd>Eine eindeutige Device-ID, Gerätename, Plattform, letzte Aktivität sowie eine Playback-Session mit Track, Position, Play/Pause, Queue, Shuffle, Repeat und Zeitstempeln. Der anfängliche Gerätename kann dem Namen deines Computers entsprechen. Diese Grundlage für spätere Geräteübergaben wird aktuell lokal betrieben; ein öffentlicher geräteübergreifender Cloud-Dienst ist noch nicht aktiv.</dd>
-<dt>Lokale Musik und eigene TTML-Lyrics</dt><dd>Ausgewählte Dateien und Musikordner, Dateipfade, Tags, Cover, technische Audioinformationen und Informationen zur Erkennung von Dateiänderungen und Duplikaten. Eigene TTML-Dateien werden für die Lyrics-Anzeige eingelesen und zugeordnet. Musikdateien und TTML-Inhalte werden nicht automatisch an Musikprovider, Spicy Lyrics oder einen Velvet-Cloud-Dienst hochgeladen.</dd>
-<dt>Diagnose und Wiederherstellung</dt><dd>Lokale Start- und Fehlerdiagnosen, begrenzte technische Anfragedaten wie Route, Status und Dauer sowie Wiederherstellungsdaten zum aktuellen Track, zur Queue und zur Wiedergabeposition. Diese werden im aktuellen Stand nicht automatisch an einen externen Analysedienst gesendet.</dd>
+<dt>Mediathek und Einstellungen</dt><dd>Favoriten, eigene und intelligente Playlists, Track-Zuordnungen, Queue, Wiedergabeposition und Einstellungen, etwa Sprache, Erscheinungsbild, bevorzugter Provider, Audio-, Lyrics- und Jugendschutz-Optionen. Tracks erhalten eine eigene Velvet-Identität; zugehörige Quellen können lokale Dateien, Spotify oder TIDAL sein.</dd>
+<dt>Hörverhalten, Stats und Replay</dt><dd>Gehörte Tracks, Zeitpunkte, tatsächlich erfasste Hörzeit, qualifizierte Plays, Playcounts und zuletzt abgespielte Tracks. Daraus berechnet Velvet persönliche Statistiken, Jahresauswertungen und Empfehlungen. Auch Angaben wie „Mehr davon“, „Weniger davon“ oder gesperrte Songs und Artists werden berücksichtigt.</dd>
+<dt>Suchverlauf</dt><dd>Die letzten Suchbegriffe und Suchzeitpunkte. Suchanfragen können außerdem für die jeweilige Suche an die in <a href="#dienste">Abschnitt 5</a> genannten Katalogdienste gelangen.</dd>
+<dt>Lokale Musik und eigene TTML-Lyrics</dt><dd>Ausgewählte Dateien und Musikordner, Dateipfade, Tags, Cover, technische Audioinformationen und Informationen zur Erkennung von Dateiänderungen und Duplikaten. Eigene TTML-Dateien werden für die Lyrics-Anzeige eingelesen und zugeordnet. <strong>Musikdateien, Cover-Dateien, Dateipfade und TTML-Inhalte werden nie automatisch hochgeladen</strong> – weder an Musikprovider noch an Spicy Lyrics oder den Velvet-Server.</dd>
+<dt>Anmeldung und Provider-Verbindungen</dt><dd>Die Sitzung deines Velvet-Accounts und gegebenenfalls Spotify-Zugangstokens werden mit der Windows-Datenverschlüsselung (DPAPI) geschützt gespeichert.</dd>
+<dt>Diagnose und Wiederherstellung</dt><dd>Lokale Start- und Fehlerdiagnosen, begrenzte technische Anfragedaten wie Route, Status und Dauer sowie Wiederherstellungsdaten zum aktuellen Track, zur Queue und zur Wiedergabeposition. Diese werden nicht automatisch an einen externen Analysedienst gesendet.</dd>
 </dl>
-<p>Beim ersten Account kann Velvet vorhandene lokale Bibliotheksdaten übernehmen und zur Absicherung eine lokale Migrationskopie behalten. Offline-Änderungen werden lokal vorgemerkt und nach Wiederverbindung mit dem lokalen Backend abgeglichen. Die vorbereitete Account-Synchronisation schließt lokale Audio-Dateiinhalte, lokale Dateipfade und importierte TTML-Dateien aus; sie ist derzeit keine Übertragung an einen öffentlichen Cloud-Anbieter.</p>
-<p>Eine ausdrücklich über die Developer-Funktionen eingereichte eigene TTML-Version kann mit Track-Zuordnung, Versions- und Bearbeitungsmetadaten im lokalen Backend gespeichert werden. Das ist von einem gewöhnlichen lokalen Dateiimport zu unterscheiden.</p>
+<p>Bei der ersten Anmeldung kann Velvet vorhandene lokale Bibliotheksdaten in deinen Account übernehmen und zur Absicherung eine lokale Migrationskopie behalten. Ein weiterer Account auf demselben Gerät erhält diese Daten nicht. Nach dem Abmelden zeigt Velvet wieder eine getrennte Gastbibliothek.</p>
 </section>
 
-<section id="zwecke"><h2>3. Zwecke und Rechtsgrundlagen</h2>
-<p>Velvet verarbeitet die Funktionsdaten, um Musik abzuspielen, die Mediathek zu verwalten, Anmeldungen und Zugriffsrechte abzusichern, Lyrics anzuzeigen und Wiedergabezustände wiederherzustellen. Hör- und Präferenzdaten dienen deinen persönlichen Statistiken und Empfehlungen innerhalb von Velvet. Es gibt derzeit keine eingebundene Werbe- oder externe Produktanalyse-Plattform.</p>
-<p>Soweit eine Verarbeitung in meiner Verantwortung zur Bereitstellung einer von dir angeforderten Funktion oder zur Bearbeitung einer entsprechenden Anfrage erforderlich ist, erfolgt sie auf Grundlage von Art. 6 Abs. 1 Buchst. b DSGVO. Die sichere Bereitstellung dieser Website, Missbrauchsschutz und die Bearbeitung allgemeiner Kontaktanfragen beruhen auf Art. 6 Abs. 1 Buchst. f DSGVO; die berechtigten Interessen sind ein sicherer Betrieb und eine sachgerechte Kommunikation. Wird für eine Verarbeitung eine Einwilligung eingeholt, ist Art. 6 Abs. 1 Buchst. a DSGVO die Grundlage; eine solche Einwilligung kann für die Zukunft widerrufen werden.</p>
-<p>Lokale Musik kann ohne Verbindung eines Spotify- oder TIDAL-Nutzerkontos verwendet werden. Kontoangaben sind für Account-Funktionen erforderlich; ein Avatar ist freiwillig. Ohne die jeweils nötigen Daten oder externen Verbindungen sind die betreffenden Online-Funktionen nicht verfügbar.</p>
+<section id="cloud"><h2>3. Velvet-Account und Cloud-Synchronisation</h2>
+<p>Ein Velvet-Account ist freiwillig. Er wird benötigt, um deine Bibliothek zwischen Geräten zu synchronisieren, die Wiedergabe an ein anderes Gerät zu übergeben (Continuity) und die Online-Kataloge über den Velvet-Server zu nutzen.</p>
+<p>Einen Velvet-Account darfst du ab 16 Jahren anlegen. Jüngere benötigen die Zustimmung ihrer Eltern. Velvet ohne Account kann jeder nutzen.</p>
+<h3>Was auf dem Velvet-Server gespeichert wird</h3>
+<dl>
+<dt>Account und Anmeldung</dt><dd>Account-ID, Username, Anzeigename, optionales Profilbild (PNG, JPEG oder WebP bis 250 KB), Account-Rolle und Erstellungszeitpunkt. Bei Anmeldung mit Passwort ein gesalzener Passwort-Hash, nie das Passwort selbst. Für jede Sitzung ein Hash des Sitzungstokens mit Ablaufzeit. Für die Registrierung mit Username ist keine E-Mail-Adresse erforderlich. Es gibt keine öffentlichen Profile, keine Nutzersuche und keine Social-Funktionen.</dd>
+<dt>Google-Anmeldung (optional)</dt><dd>Wenn du „Mit Google anmelden“ verwendest oder Google mit deinem Account verknüpfst: die Google-Nutzerkennung, deine bei Google bestätigte E-Mail-Adresse und der Zeitpunkt der Verknüpfung. Bei einem neu angelegten Account wird dein Google-Name als Anzeigename übernommen. Ein Google-Profilbild wird nicht geladen. Für die Dauer eines Anmeldevorgangs (höchstens fünf Minuten) speichert der Server außerdem technische Prüfwerte, die Missbrauch und Wiederholungen verhindern. Einzelheiten zum Ablauf stehen in <a href="#dienste">Abschnitt 5</a>.</dd>
+<dt>Bibliothek, Einstellungen und Hörverhalten</dt><dd>Die in Abschnitt 2 genannten Bibliotheksdaten: Track-Metadaten und Provider-Kennungen, Favoriten, Playlists, Queue, Hörverlauf mit Hörzeit und Plays, Playcounts, Empfehlungs- und Jugendschutz-Präferenzen sowie allgemeine Einstellungen. Lokale Dateipfade, Musik-, Cover- und TTML-Dateien sind ausgenommen. Gerätespezifische Einstellungen wie das Audio-Ausgabegerät bleiben lokal.</dd>
+<dt>Suchverlauf</dt><dd>Die letzten höchstens 30 Suchbegriffe deines Accounts mit Zeitpunkt.</dd>
+<dt>Continuity / Handoff</dt><dd>Eine Geräte-ID, Gerätename, Plattform und letzte Aktivität deiner angemeldeten Geräte sowie die aktuelle Playback-Session mit Track, Position, Play/Pause, Queue, Shuffle, Repeat und Zeitstempeln. Der anfängliche Gerätename kann dem Namen deines Computers entsprechen.</dd>
+<dt>Developer-Funktionen</dt><dd>Nur bei Accounts mit Developer-Rechten: eingereichte Lyrics-Versionen und ein Protokoll redaktioneller Änderungen.</dd>
+</dl>
+<h3>Server, Standort und Auftragsverarbeitung</h3>
+<p>Der Velvet-Server wird bei <strong>Oracle Cloud Infrastructure</strong> in der Region <strong>Frankfurt am Main (Deutschland)</strong> betrieben. Die Datenbank liegt auf diesem Server und ist nicht direkt aus dem Internet erreichbar. Oracle ist als Auftragsverarbeiter nach Art. 28 DSGVO auf Grundlage seiner Datenverarbeitungsbedingungen tätig. Weitere Informationen: <a href="https://www.oracle.com/legal/privacy/services-privacy-policy.html">Oracle Services Privacy Policy</a>.</p>
+<p>Die App verbindet sich über HTTPS mit dem Server. Dessen Adresse wird über den DNS-Dienst sslip.io aufgelöst. Dabei wird nur der Servername abgefragt, keine Account- oder Bibliotheksdaten. Um die Erreichbarkeit anzuzeigen, fragt die installierte App den Server auch ohne Anmeldung etwa alle 30 Sekunden ab. Dabei werden keine Account-Daten übertragen.</p>
+<h3>Protokolle auf dem Server</h3>
+<p>Der Server führt <strong>kein HTTP-Zugriffsprotokoll</strong>. Es werden also keine IP-Adressen, Anfrageinhalte oder Header gespeichert. Zum Schutz vor Überlastung und vor dem Durchprobieren von Passwörtern werden IP-Adressen und Anmeldeversuche kurzzeitig im Arbeitsspeicher gezählt und nicht dauerhaft gespeichert. Für den Betrieb werden Start- und Fehlermeldungen des Dienstes ohne Anfrageinhalte protokolliert. Eine interne Fehlerübersicht im Arbeitsspeicher enthält höchstens 300 Einträge mit Zeitpunkt, Routenmuster, Status, Dauer und Fehlerkategorie, aber keine Inhalte, Tokens oder Passwörter.</p>
+<h3>Wer Zugriff hat</h3>
+<p>Zugriff auf die Server-Daten hat ausschließlich der Verantwortliche als Betreiber. Accounts mit Developer-Rechten sehen keine privaten Bibliotheken anderer Nutzer. Daten werden nicht verkauft und nicht zu Werbezwecken weitergegeben.</p>
+<p>Offline-Änderungen werden zunächst lokal gespeichert und nach Wiederverbindung automatisch übertragen. Bei Konflikten bewahrt Velvet lokal eine Wiederherstellungskopie auf.</p>
+</section>
+
+<section id="zwecke"><h2>4. Zwecke und Rechtsgrundlagen</h2>
+<p>Velvet verarbeitet die Funktionsdaten, um Musik abzuspielen, die Mediathek zu verwalten und geräteübergreifend zu synchronisieren, Anmeldungen und Zugriffsrechte abzusichern, Lyrics und Musikvideos anzuzeigen und Wiedergabezustände wiederherzustellen oder an ein anderes Gerät zu übergeben. Hör- und Präferenzdaten dienen ausschließlich deinen persönlichen Statistiken und Empfehlungen innerhalb von Velvet. Es gibt keine eingebundene Werbe- oder externe Produktanalyse-Plattform.</p>
+<p>Die Bereitstellung des Velvet-Accounts, der Synchronisation, der Google-Anmeldung und der übrigen von dir genutzten Funktionen erfolgt auf Grundlage von Art. 6 Abs. 1 Buchst. b DSGVO. Grundlage dafür ist der Nutzungsvertrag über die App und deinen Account. Auf Art. 6 Abs. 1 Buchst. f DSGVO beruhen:</p>
+<ul>
+<li>die Erreichbarkeitsprüfung,</li>
+<li>der Schutz vor Missbrauch und Überlastung,</li>
+<li>Datenbanksicherungen und Änderungsprotokolle zur Wiederherstellung und Nachvollziehbarkeit,</li>
+<li>die sichere Bereitstellung dieser Website,</li>
+<li>die Bearbeitung allgemeiner Kontaktanfragen.</li>
+</ul>
+<p>Die berechtigten Interessen sind ein sicherer, stabiler und nachvollziehbarer Betrieb sowie eine sachgerechte Kommunikation. Wird für eine Verarbeitung eine Einwilligung eingeholt, ist Art. 6 Abs. 1 Buchst. a DSGVO die Grundlage. Eine solche Einwilligung kann für die Zukunft widerrufen werden.</p>
+<p>Lokale Musik kann ohne Velvet-Account und ohne Verbindung eines Spotify- oder TIDAL-Nutzerkontos verwendet werden. Für Account-Funktionen sind Username, Anzeigename und eine Anmeldemethode erforderlich; ein Profilbild ist freiwillig. Ohne die jeweils nötigen Daten oder externen Verbindungen sind die betreffenden Online-Funktionen nicht verfügbar.</p>
 <p>Empfehlungen werten deine musikalischen Vorlieben aus. Daraus entstehen keine automatisierten Entscheidungen mit rechtlicher oder vergleichbar erheblicher Wirkung im Sinne von Art. 22 DSGVO.</p>
 </section>
 
-<section id="dienste"><h2>4. Externe Dienste und übermittelte Daten</h2>
-<p>Auch bei lokalem Backend verlassen Online-Anfragen dein Gerät. Der jeweilige Empfänger erhält die für die Anfrage erforderlichen Inhalte sowie technisch bedingt unter anderem deine öffentliche IP-Adresse, Zeitpunkt und Verbindungsinformationen. Eine Katalogsuche oder das Nachladen von Lyrics und Covern kann ohne separate Anmeldung beim jeweiligen Dienst erfolgen.</p>
+<section id="dienste"><h2>5. Externe Dienste und übermittelte Daten</h2>
+<p>Online-Anfragen verlassen dein Gerät. Der jeweilige Empfänger erhält die für die Anfrage erforderlichen Inhalte sowie technisch bedingt unter anderem eine IP-Adresse, Zeitpunkt und Verbindungsinformationen. Bist du angemeldet, laufen Katalog-, Video- und Lyrics-Suchen über den Velvet-Server. Der jeweilige Anbieter sieht dann die Adresse des Servers statt deiner eigenen und erhält keine Velvet-Account-Daten. Im Gastmodus fragt der lokale Hintergrunddienst auf deinem Gerät die Anbieter direkt an, soweit er dafür eingerichtet ist.</p>
+
+<h3>Google-Anmeldung</h3>
+<p>Bei „Mit Google anmelden“ öffnet Velvet die Google-Anmeldeseite in deinem Standardbrowser. Die Anmeldung selbst findet bei Google statt; Velvet erhält dein Google-Passwort nicht. Google übermittelt einen einmaligen Code zurück an die App. Der Velvet-Server tauscht ihn bei Google gegen eine signierte Bestätigung deiner Identität ein. Angefordert werden nur die Berechtigungen <code>openid</code>, <code>email</code> und <code>profile</code>. Velvet speichert davon nur die in Abschnitt 3 genannten Angaben. Zugriffstokens von Google werden nicht gespeichert. Die E-Mail-Adresse dient nur dazu, Konflikte zwischen Accounts zu erkennen. Für Werbung oder Newsletter wird sie nicht verwendet. Google verarbeitet die Anmeldung nach der <a href="https://policies.google.com/privacy?hl=de">Google-Datenschutzerklärung</a>. Erteilte Berechtigungen kannst du in deinem Google-Konto widerrufen.</p>
 
 <h3>Spotify</h3>
-<p>Für Katalogsuchen übermittelt Velvet Suchbegriffe oder Track-, Artist- und Album-Kennungen an Spotify und erhält Metadaten und Cover-Verweise. Wenn du Spotify Connect verbindest, erfolgt die Anmeldung bei Spotify über OAuth. Velvet erhält Zugriffs- und gegebenenfalls Refresh-Tokens. Für Connect werden unter anderem verfügbare Spotify-Geräte und der Wiedergabezustand abgefragt sowie Wiedergabebefehle, Track-Kennungen, Zielgerät, Position oder Lautstärke übermittelt.</p>
-<p>Bei der Einrichtung wird ein Spotify-Profil zur Prüfung des Abostatus abgerufen. Die erteilten Berechtigungen können dabei auch private Profilinformationen und die Spotify-E-Mail-Adresse zugänglich machen; Velvet übernimmt diese nicht als Velvet-Registrierungsdaten. Spotify verarbeitet die Nutzung seines eigenen Dienstes nach der <a href="https://www.spotify.com/de/legal/privacy-policy/">Spotify-Datenschutzerklärung</a>.</p>
+<p>Für Katalogsuchen werden Suchbegriffe oder Track-, Artist- und Album-Kennungen an Spotify übermittelt; zurück kommen Metadaten und Cover-Verweise. Bist du angemeldet, stellt der Velvet-Server diese Anfragen mit den Zugangsdaten der Anwendung, nicht mit deinem Spotify-Konto.</p>
+<p>Wenn du Spotify Connect verbindest, erfolgt die Anmeldung bei Spotify über OAuth und ausschließlich auf deinem Gerät. Velvet erhält Zugriffs- und gegebenenfalls Refresh-Tokens. Diese bleiben verschlüsselt auf deinem Gerät und werden nicht an den Velvet-Server übertragen. Für Connect werden unter anderem verfügbare Spotify-Geräte und der Wiedergabezustand abgefragt sowie Wiedergabebefehle, Track-Kennungen, Zielgerät, Position oder Lautstärke übermittelt.</p>
+<p>Bei der Einrichtung wird dein Spotify-Profil abgerufen, um den Abostatus zu prüfen. Die erteilten Berechtigungen können dabei auch private Profilinformationen und die Spotify-E-Mail-Adresse zugänglich machen. Velvet übernimmt diese Angaben nicht in deinen Velvet-Account. Spotify verarbeitet die Nutzung seines eigenen Dienstes nach der <a href="https://www.spotify.com/de/legal/privacy-policy/">Spotify-Datenschutzerklärung</a>.</p>
 
 <h3>TIDAL</h3>
-<p>Die aktuelle Integration nutzt den TIDAL-Katalog mit Anwendungszugangsdaten. Dabei werden Suchbegriffe, Katalog-Kennungen und ein Markt-/Ländercode übertragen und Metadaten sowie Cover-Verweise abgerufen. Sie implementiert derzeit keinen Login in ein persönliches TIDAL-Konto und keine vollständige TIDAL-Audiowiedergabe. Informationen des Anbieters: <a href="https://tidal.com/privacy">TIDAL-Datenschutzerklärung</a>.</p>
+<p>Die Integration nutzt den TIDAL-Katalog mit den Zugangsdaten der Anwendung. Dabei werden Suchbegriffe, Katalog-Kennungen und ein Markt-/Ländercode übertragen; zurück kommen Metadaten und Cover-Verweise. Einen Login in ein persönliches TIDAL-Konto und eine vollständige TIDAL-Audiowiedergabe gibt es derzeit nicht. Informationen des Anbieters: <a href="https://tidal.com/privacy">TIDAL-Datenschutzerklärung</a>.</p>
 
 <h3>YouTube / Google</h3>
-<p>Um ein passendes Musikvideo zu finden, fragt das lokale Backend die YouTube Data API anhand von Artist und Songtitel ab. Diese Suche kann bereits beim Anzeigen der Songansicht stattfinden; ein Video muss dafür noch nicht gestartet worden sein. Ergebnisse werden lokal zwischengespeichert.</p>
-<p>Wenn du ein Musikvideo öffnest, lädt Velvet den sichtbaren offiziellen YouTube-IFrame-Player im erweiterten Datenschutzmodus über youtube-nocookie.com. Dabei entstehen direkte Verbindungen zu Google/YouTube. Der Anbieter erhält unter anderem die Video-Kennung, IP-Adresse, technische Geräte-/Browserdaten und Wiedergabeinteraktionen; je nach Nutzung können Cookies oder vergleichbare Speichermechanismen beteiligt sein. Der erweiterte Datenschutzmodus verhindert nicht jede Datenübermittlung. Maßgeblich ist die <a href="https://policies.google.com/privacy?hl=de">Google-Datenschutzerklärung</a>.</p>
+<p>Um ein passendes Musikvideo zu finden, wird die YouTube Data API anhand von Artist, Songtitel und Dauer abgefragt. Bei angemeldeten Nutzern übernimmt das der Velvet-Server, im Gastmodus der lokale Hintergrunddienst. Diese Suche kann bereits beim Anzeigen der Songansicht stattfinden; ein Video muss dafür noch nicht gestartet worden sein. Ergebnisse werden ohne Bezug zu deinem Account zwischengespeichert.</p>
+<p>Wenn du ein Musikvideo öffnest, lädt Velvet den offiziellen YouTube-IFrame-Player im erweiterten Datenschutzmodus über youtube-nocookie.com. Dabei entstehen direkte Verbindungen von deinem Gerät zu Google/YouTube. Der Anbieter erhält unter anderem die Video-Kennung, deine IP-Adresse, technische Geräte- und Browserdaten sowie Wiedergabeinteraktionen. Je nach Nutzung können Cookies oder vergleichbare Speichermechanismen beteiligt sein. Der erweiterte Datenschutzmodus verhindert nicht jede Datenübermittlung. Maßgeblich ist die <a href="https://policies.google.com/privacy?hl=de">Google-Datenschutzerklärung</a>.</p>
 
 <h3>Spicy Lyrics</h3>
-<p>Wenn keine vorrangige eigene TTML vorliegt und die Spicy-Abfrage verwendet wird, ruft das lokale Backend die offizielle Spicy Lyrics Developer API auf. Übermittelt wird die dem Song zugeordnete Spotify-Track-ID; nötigenfalls können vorher Katalog-Metadaten zum Zuordnen des Songs abgefragt werden. Spicy erhält keine Velvet-Anmeldedaten, keine Velvet-Account-ID und keine komplette persönliche Bibliothek. Der API-Schlüssel bleibt im Backend.</p>
-<p>Die Antwort kann synchronisierte oder statische Lyrics sowie Angaben zur Quelle und zu Uploader und Maker enthalten. Velvet zeigt diese Angaben und gegebenenfalls mitgelieferte Profilverknüpfungen zur Attribution an. Sie werden nicht für ein eigenes Nutzerverzeichnis verwendet. Ein Klick auf einen Credit-Link öffnet die betreffende externe Website. Die Lyrics werden nur vorübergehend für die Anzeige gespeichert und nicht als eigene dauerhafte TTML-Version behandelt. Weitere Informationen: <a href="https://developers.spicylyrics.org/privacy">Datenschutz der Spicy Lyrics Developer API</a>.</p>
+<p>Spicy Lyrics wird nur vom lokalen Hintergrunddienst auf deinem Gerät verwendet, und nur wenn er dafür eingerichtet ist. Liegt keine vorrangige eigene TTML vor, ruft er die offizielle Spicy Lyrics Developer API auf. Übermittelt wird die dem Song zugeordnete Spotify-Track-ID; bei Bedarf werden vorher Katalog-Metadaten zum Zuordnen des Songs abgefragt. Spicy erhält keine Velvet-Anmeldedaten, keine Velvet-Account-ID und keine persönliche Bibliothek.</p>
+<p>Die Antwort kann synchronisierte oder statische Lyrics sowie Angaben zur Quelle und zu Uploader und Maker enthalten. Velvet zeigt diese Angaben und gegebenenfalls mitgelieferte Profilverknüpfungen zur Attribution an; ein Klick auf einen Credit-Link öffnet die betreffende externe Website. Die Lyrics werden nur vorübergehend für die Anzeige gespeichert. Weitere Informationen: <a href="https://developers.spicylyrics.org/privacy">Datenschutz der Spicy Lyrics Developer API</a>.</p>
+
+<h3>Microsoft Store</h3>
+<p>Wenn du Velvet über den Microsoft Store installierst, verarbeitet Microsoft Daten zu Erwerb, Download, Installation und Updates in eigener Verantwortung, nach der <a href="https://privacy.microsoft.com/de-de/privacystatement">Microsoft-Datenschutzerklärung</a>. Der Entwickler erhält darüber keine Zahlungsdaten. Er kann von Microsoft zusammengefasste Statistiken (etwa Downloadzahlen) erhalten, abhängig von deinen Windows-Diagnoseeinstellungen auch Absturzberichte.</p>
 
 <h3>Cover, Links und internationale Verarbeitung</h3>
-<p>Cover und andere Provider-Bilder können direkt von den jeweiligen Bildservern geladen werden. Auch dabei wird deine IP-Adresse an den Bildanbieter übermittelt. Externe Links werden erst beim Öffnen im Browser aufgerufen; anschließend gilt die Erklärung der jeweiligen Website.</p>
-<p>Die genannten Dienste und ihre technischen Dienstleister können Daten außerhalb des Europäischen Wirtschaftsraums verarbeiten, insbesondere in den USA. Spicy nennt für seine Developer API beispielsweise US-Hosting. Die Anbieter erläutern ihre internationalen Übermittlungen und gegebenenfalls Angemessenheitsbeschlüsse oder Standardvertragsklauseln in den verlinkten Datenschutzinformationen. Die lokale Speicherung in Velvet bedeutet daher nicht, dass eine Nutzung von Online-Diensten ausschließlich auf deinem Gerät oder in der EU stattfindet.</p>
-<p><strong>Velvet speichert keine Passwörter deiner Musikprovider.</strong> Spotify-Zugänge werden über OAuth verbunden. Provider-Tokens werden getrennt von der Bibliothek geschützt gespeichert und nicht als Teil von Playlists oder Einstellungen synchronisiert.</p>
+<p>Cover und andere Provider-Bilder werden direkt von den Bildservern der Anbieter geladen, etwa von Spotify oder TIDAL. Dabei wird deine IP-Adresse an den jeweiligen Anbieter übermittelt. Externe Links werden erst beim Öffnen im Browser aufgerufen. Danach gilt die Datenschutzerklärung der jeweiligen Website.</p>
+<p>Der Velvet-Server steht in Deutschland. Die genannten Drittanbieter und ihre Dienstleister können Daten auch außerhalb des Europäischen Wirtschaftsraums verarbeiten, insbesondere in den USA; Spicy nennt für seine Developer API beispielsweise US-Hosting. In ihren verlinkten Datenschutzinformationen erläutern die Anbieter ihre internationalen Übermittlungen, etwa auf Grundlage von Angemessenheitsbeschlüssen oder Standardvertragsklauseln.</p>
+<p><strong>Velvet speichert keine Passwörter deiner Musikprovider.</strong> Provider-Tokens werden getrennt von der Bibliothek geschützt gespeichert. Mit Playlists oder Einstellungen werden sie nicht synchronisiert.</p>
 </section>
 
-<section id="speicherdauer"><h2>5. Speicherdauer</h2>
+<section id="speicherdauer"><h2>6. Speicherdauer</h2>
 <dl>
-<dt>Lokale Accounts und Bibliotheksdaten</dt><dd>Profile, Favoriten, Playlists, Queue, Einstellungen, Hörverlauf, Playcounts, Stats und Geräteinformationen haben aktuell keine pauschale automatische Löschfrist. Sie bleiben in der lokalen Installation, bis sie geändert oder gezielt entfernt werden. Sie werden für die fortlaufende Mediathek, Verlaufsauswertung und Wiederherstellung aufbewahrt.</dd>
+<dt>Velvet-Account und synchronisierte Daten</dt><dd>Account, Profil, synchronisierte Bibliothek, Einstellungen, Hörverlauf, Statistiken und Continuity-Geräte werden gespeichert, solange dein Account besteht. Danach werden sie gelöscht (siehe <a href="#rechte">Abschnitt 8</a>). Einzelne Einträge kannst du jederzeit in der App ändern oder entfernen.</dd>
+<dt>Lokale Daten</dt><dd>Daten auf deinem Gerät, darunter Gastbibliothek, lokale Account-Kopien, Migrations- und Wiederherstellungskopien sowie von dir erzeugte Backups, bleiben bestehen, bis du sie änderst oder entfernst. Abmelden oder die Löschung des Accounts auf dem Server entfernt sie nicht automatisch.</dd>
 <dt>Suchverlauf</dt><dd>Es werden höchstens 30 letzte Suchbegriffe geführt. Du kannst den Verlauf in der App löschen.</dd>
-<dt>Velvet-Sessions</dt><dd>Eine Session ist 30 Tage gültig. Beim erfolgreichen Logout wird sie im Backend widerrufen. Ist dieses offline, wird der Widerruf lokal vorgemerkt. Abgelaufene Sessions berechtigen nicht mehr zum Zugriff; ihre Datenbankeinträge werden bei der Ausgabe einer neuen Session bereinigt und können bis dahin noch vorhanden sein.</dd>
-<dt>Spotify-Tokens</dt><dd>Zugriffstokens gelten für die vom Provider festgelegte Laufzeit. Ein Refresh-Token ermöglicht die Erneuerung, bis die Verbindung getrennt oder die Berechtigung widerrufen wird. Beim Abmelden von Spotify in Velvet wird die lokale Token-Speicherung entfernt.</dd>
-<dt>Spicy-Lyrics-Cache</dt><dd>Lyrics und normalisierte Daten einschließlich Quelle, Attribution, Abruf- und Ablaufzeit bleiben derzeit nur im Arbeitsspeicher: höchstens sieben Tage, gegebenenfalls kürzer durch Verdrängung oder Backend-Neustart. Abgelaufene Daten werden nicht weiter angezeigt, sondern müssen neu abgerufen werden. Damit liegt die Speicherung unter der von Spicy erlaubten Höchstgrenze von 30 Tagen. Sie wird nicht in Bibliotheks-Backups übernommen.</dd>
-<dt>YouTube-Suchergebnisse</dt><dd>Ein gefundenes Video wird bis zu sieben Tage, ein Ergebnis ohne Treffer bis zu einen Tag als gültiger Cache verwendet. Danach ist ein neuer Abruf nötig; abgelaufene Einträge werden beim Bereinigen beziehungsweise erneuten Abruf entfernt.</dd>
-<dt>Diagnose, Wiederherstellung und Backups</dt><dd>Die interne Fehlerübersicht ist auf 300 Einträge im Arbeitsspeicher begrenzt. Lokale Startdiagnosen, Wiederherstellungsdateien, Migrationskopien und von dir erzeugte Backups können darüber hinaus bestehen bleiben, bis sie ersetzt oder gelöscht werden. Eigene Musik- und TTML-Dateien bleiben unter deiner Kontrolle und werden nicht allein durch Abmelden gelöscht.</dd>
-<dt>Kontakt und externe Dienste</dt><dd>Kontaktanfragen werden aufbewahrt, solange sie für die Bearbeitung und eine erforderliche Nachvollziehbarkeit benötigt werden; danach werden sie gelöscht, sofern keine gesetzliche Aufbewahrung oder konkrete Rechtsverteidigung entgegensteht. Für Daten bei Spotify, TIDAL, Google, Spicy und GitHub gelten deren eigene Speicherregeln.</dd>
+<dt>Velvet-Sessions</dt><dd>Eine Session ist höchstens 30 Tage gültig. Beim Logout wird sie widerrufen. Ist der Server gerade nicht erreichbar, wird der Widerruf vorgemerkt und nachgeholt. Abgelaufene Sessions berechtigen nicht mehr zum Zugriff. Ihre Einträge werden bei der nächsten Anmeldung eines beliebigen Nutzers gelöscht und können bis dahin noch in der Datenbank stehen.</dd>
+<dt>Google-Anmeldung</dt><dd>Technische Prüfwerte eines Anmeldevorgangs werden nach spätestens fünf Minuten ungültig. Gelöscht werden sie nach Abschluss des Vorgangs oder spätestens beim nächsten Google-Anmeldevorgang. Die Google-Verknüpfung bleibt bestehen, bis du sie in der App entfernst oder dein Account gelöscht wird.</dd>
+<dt>Datenbanksicherungen</dt><dd>Vor Server-Updates werden Sicherungen der Datenbank erstellt und höchstens 30 Tage aufbewahrt. Daten eines gelöschten Accounts können bis zum Ablauf dieser Frist noch in einer Sicherung enthalten sein. Muss eine Sicherung eingespielt werden, werden gelöschte Accounts erneut entfernt.</dd>
+<dt>Spotify-Tokens</dt><dd>Zugriffstokens gelten für die vom Provider festgelegte Laufzeit. Ein Refresh-Token ermöglicht die Erneuerung, bis die Verbindung getrennt oder die Berechtigung widerrufen wird. Wenn du Spotify in Velvet trennst, wird die lokale Token-Speicherung entfernt.</dd>
+<dt>Spicy-Lyrics-Cache</dt><dd>Lyrics und zugehörige Angaben bleiben nur im Arbeitsspeicher des lokalen Hintergrunddienstes, höchstens sieben Tage, bei Verdrängung oder Neustart auch kürzer. Damit liegt die Speicherung unter der von Spicy erlaubten Höchstgrenze von 30 Tagen.</dd>
+<dt>YouTube-Suchergebnisse</dt><dd>Ein gefundenes Video wird bis zu sieben Tage, ein Ergebnis ohne Treffer bis zu einen Tag zwischengespeichert, ohne Bezug zu einem Account. Abgelaufene Einträge werden beim Start und danach stündlich entfernt.</dd>
+<dt>Protokolle</dt><dd>Die Zählung von Anfragen und Anmeldeversuchen besteht nur kurzfristig im Arbeitsspeicher. Die interne Fehlerübersicht umfasst höchstens 300 Einträge im Arbeitsspeicher und geht bei einem Neustart verloren. Start- und Fehlermeldungen des Dienstes enthalten keine personenbezogenen Anfrageinhalte. Änderungsprotokolle von Developer-Accounts bleiben bestehen, solange die bearbeiteten Daten bestehen.</dd>
+<dt>Kontakt und externe Dienste</dt><dd>Kontaktanfragen werden aufbewahrt, solange sie für die Bearbeitung und eine erforderliche Nachvollziehbarkeit benötigt werden. Danach werden sie gelöscht, sofern keine gesetzliche Aufbewahrungspflicht oder konkrete Rechtsverteidigung entgegensteht. Für Daten bei Google, Spotify, TIDAL, Spicy, Microsoft, Oracle und GitHub gelten außerdem deren eigene Speicherregeln.</dd>
 </dl>
 </section>
 
-<section id="sicherheit"><h2>6. Datensicherheit</h2>
-<p>Velvet-Passwörter werden mit einem zufälligen Salt und dem Passwort-Hashverfahren scrypt gespeichert, nicht im Klartext. Die Session-Datenbank speichert einen Hash des Sitzungstokens. Dauerhaft gespeicherte Account-Sitzungen und Spotify-Tokens werden in der Windows-App mit dem Schutz des Betriebssystems verschlüsselt; dafür ist kein unverschlüsselter Ersatz vorgesehen.</p>
-<p>Account- und Developer-Berechtigungen werden im Backend geprüft. Private Provider-Tokens und API-Schlüssel werden nicht als normale Profildaten oder Lyrics-Antworten an die Benutzeroberfläche weitergegeben. Diagnoseausgaben sind auf technische Informationen begrenzt und sollen keine Passwörter oder Tokens enthalten.</p>
-<p>Der aktuelle App-Backend-Verkehr erfolgt über die lokale Loopback-Adresse auf demselben Rechner. Verbindungen zu den genannten externen APIs erfolgen über HTTPS. <strong>Die gesamte Bibliothek und selbst angelegte Backups sind dadurch nicht automatisch verschlüsselt.</strong> Der Schutz deines Windows-Kontos, Datenträgers und deiner Sicherungskopien bleibt deshalb wichtig.</p>
+<section id="sicherheit"><h2>7. Datensicherheit</h2>
+<p>Velvet-Passwörter werden mit einem zufälligen Salt und dem Hashverfahren scrypt gespeichert, nie im Klartext. Anmeldeversuche sind begrenzt. Der Server speichert nur einen Hash des Sitzungstokens. Auf deinem Gerät werden Account-Sitzungen und Spotify-Tokens mit dem Schutz des Betriebssystems verschlüsselt; eine unverschlüsselte Ersatzspeicherung gibt es nicht. Sitzungstokens werden ausschließlich an den Velvet-Server gesendet, bei dem sie ausgestellt wurden.</p>
+<p>Die Verbindung zwischen App und Velvet-Server ist mit TLS (HTTPS) verschlüsselt. Der Server-Dienst läuft mit eingeschränkten Rechten. Die Datenbank ist nur lokal auf dem Server erreichbar. Zugangsdaten für Google, Spotify, TIDAL und YouTube liegen ausschließlich auf dem Server oder in deiner lokalen Konfiguration und sind nicht in der App enthalten. Account- und Developer-Berechtigungen werden bei jeder Anfrage auf dem Server geprüft.</p>
+<p><strong>Daten auf deinem Gerät, etwa die lokale Bibliothek und selbst angelegte Backups, sind nicht automatisch verschlüsselt.</strong> Der Schutz deines Windows-Kontos, deines Datenträgers und deiner Sicherungskopien bleibt deshalb wichtig.</p>
 </section>
 
-<section id="rechte"><h2>7. Deine Rechte und das Löschen von Daten</h2>
-<p>Soweit die gesetzlichen Voraussetzungen vorliegen, hast du insbesondere Rechte auf Auskunft und eine Kopie deiner Daten, Berichtigung, Löschung, Einschränkung der Verarbeitung sowie Datenübertragbarkeit. Du kannst einer Verarbeitung aufgrund berechtigter Interessen aus Gründen deiner besonderen Situation widersprechen. Eine erteilte Einwilligung kannst du mit Wirkung für die Zukunft widerrufen.</p>
+<section id="rechte"><h2>8. Deine Rechte und das Löschen von Daten</h2>
+<p>Soweit die gesetzlichen Voraussetzungen vorliegen, hast du insbesondere folgende Rechte: Auskunft und eine Kopie deiner Daten, Berichtigung, Löschung, Einschränkung der Verarbeitung sowie Datenübertragbarkeit. Einer Verarbeitung aufgrund berechtigter Interessen kannst du aus Gründen deiner besonderen Situation widersprechen. Eine erteilte Einwilligung kannst du mit Wirkung für die Zukunft widerrufen.</p>
 <p>Du kannst dich außerdem bei einer Datenschutzaufsichtsbehörde beschweren, insbesondere an deinem gewöhnlichen Aufenthaltsort, Arbeitsplatz oder am Ort des vermuteten Verstoßes. Eine Übersicht bietet die <a href="https://datenschutz.hessen.de/service/aufsichtsbehoerden-des-bundes-und-der-laender">Behördenübersicht des Hessischen Datenschutzbeauftragten</a>. Grundlagen und weitere Informationen findest du im <a href="https://www.bfdi.bund.de/SharedDocs/Downloads/DE/Flyer/Recht-auf-Datenschutz.pdf?__blob=publicationFile&amp;v=13">BfDI-Flyer zu deinen Datenschutzrechten</a>.</p>
 
 <h3>Direkt in Velvet</h3>
-<p>Du kannst Profilangaben bearbeiten, Favoriten entfernen, Playlists ändern oder löschen, den Suchverlauf leeren und Provider-Verbindungen trennen. Die Backup-Funktion kann lokale Bibliotheksdaten, Einstellungen und eigene TTML-Dateien sichern; sie ist kein Export fremder Spicy-Lyrics.</p>
+<p>In Velvet kannst du selbst:</p>
+<ul>
+<li>Anzeigename und Profilbild ändern,</li>
+<li>Favoriten entfernen sowie Playlists ändern oder löschen,</li>
+<li>den Suchverlauf leeren,</li>
+<li>die Google-Verknüpfung entfernen, wenn eine Passwort-Anmeldung erhalten bleibt,</li>
+<li>Provider-Verbindungen trennen.</li>
+</ul>
+<p>Änderungen werden mit dem Server synchronisiert. Die Backup-Funktion sichert lokale Bibliotheksdaten, Einstellungen und eigene TTML-Dateien.</p>
 
-<h3>Lokalen Account und alle zugehörigen Daten entfernen</h3>
-<p><strong>Derzeit gibt es keinen automatischen „Account löschen“-Button.</strong> Logout beendet die Anmeldung, entfernt aber nicht den Account, seine Bibliothek oder lokale Sicherungskopien. Auch eine Deinstallation löscht nicht zwingend die separate PostgreSQL-Datenbank und alle Benutzerdateien.</p>
-<p>Eine vollständige Entfernung muss daher aktuell gezielt in der lokalen Installation erfolgen: Account-Datensatz und zugehörige Daten im lokalen Backend, Account-Cache im Benutzerprofil, Sessions, Geräte-/Playback-Daten sowie gegebenenfalls Migrationskopien und Backups sind zu berücksichtigen. Für Unterstützung schreibe an <a href="mailto:privacy.velvetmusic@gmail.com">privacy.velvetmusic@gmail.com</a>. Der Entwickler kann Daten auf deinem Rechner nicht aus der Ferne löschen und benötigt dafür auch kein Passwort von dir. Eigene Musik- und TTML-Originaldateien entscheidest du separat zu behalten oder zu löschen.</p>
-<p>Für Daten, die mir tatsächlich vorliegen, etwa deine Kontaktanfrage, kannst du deine Rechte über dieselbe E-Mail-Adresse ausüben. Ich beantworte solche Anfragen grundsätzlich innerhalb eines Monats; gesetzlich zulässige Verlängerungen werden mitgeteilt. Bitte sende keine Passwörter, Tokens oder vollständigen Datenbankkopien. Eine angemessene Identitätsprüfung kann erforderlich sein.</p>
-<p>Das Löschen in Velvet löscht keine Daten in deinem Spotify-, Google- oder sonstigen Provider-Konto. Dort gespeicherte Daten und erteilte App-Berechtigungen verwaltest du zusätzlich beim jeweiligen Anbieter.</p>
+<h3>Kopie deiner Daten</h3>
+<p>Auf Anfrage erhältst du eine Kopie aller Server-Daten deines Accounts als maschinenlesbare JSON-Datei. Die Anfrage läuft über die unten genannte E-Mail-Adresse, mit derselben Bestätigung wie bei einer Löschung. Daten auf deinem Gerät kannst du jederzeit selbst mit der Backup-Funktion in Velvet sichern.</p>
+
+<h3>Velvet-Account löschen</h3>
+<p><strong>Derzeit gibt es in der App noch keinen „Account löschen“-Button.</strong> Logout beendet nur die Anmeldung auf diesem Gerät. Um deinen Account und alle zugehörigen Server-Daten löschen zu lassen, schreibe an <a href="mailto:privacy.velvetmusic@gmail.com">privacy.velvetmusic@gmail.com</a> und nenne deinen Velvet-Username.</p>
+<p>Weil für eine Username-Registrierung keine E-Mail-Adresse hinterlegt ist, kann ich dich zur Bestätigung bitten, in Velvet vorübergehend einen von mir genannten Code als Anzeigenamen einzutragen. Bitte sende dafür niemals dein Passwort.</p>
+<p>Gelöscht werden Account und Profil, alle Sitzungen, die Google-Verknüpfung, die synchronisierte Bibliothek mit Einstellungen, Hörverlauf und Statistiken, der Suchverlauf sowie Continuity-Geräte und -Session. Bei Developer-Accounts werden eingereichte Lyrics-Versionen und Protokolleinträge gelöscht oder ohne Bezug zu deiner Person weitergeführt. Aus Datenbanksicherungen verschwinden die Daten spätestens nach 30 Tagen (siehe Abschnitt 6).</p>
+<p>Daten auf deinem Gerät kann ich nicht aus der Ferne löschen. Lokale Account-Kopien, die Gastbibliothek, Migrations- und Wiederherstellungskopien sowie eigene Backups liegen in deinem Windows-Benutzerprofil im Velvet-Datenordner. Eine Deinstallation entfernt sie nicht zwingend. Über eigene Musik- und TTML-Originaldateien entscheidest du selbst.</p>
+<p>Für alle weiteren Rechte gilt dieselbe E-Mail-Adresse. Ich beantworte solche Anfragen grundsätzlich innerhalb eines Monats; gesetzlich zulässige Verlängerungen werden mitgeteilt. Bitte sende keine Passwörter, Tokens oder Datenbankkopien. Eine angemessene Identitätsprüfung kann erforderlich sein.</p>
+<p>Das Löschen in Velvet löscht keine Daten in deinem Spotify-, Google- oder sonstigen Provider-Konto. Dort gespeicherte Daten und erteilte App-Berechtigungen verwaltest du beim jeweiligen Anbieter.</p>
 </section>
 
-<section id="website"><h2>8. Besuch dieser GitHub-Pages-Seite</h2>
-<p>Diese öffentliche Dokumentation wird über <strong>GitHub Pages</strong> bereitgestellt. Sie enthält kein eingebundenes Tracking, keine Analyse-Skripte, keine externen Schriftarten und keine eingebetteten Musikplayer. Die Seite selbst setzt keine Cookies und legt keine Daten im Browser-Speicher ab.</p>
-<p>GitHub verarbeitet beim Seitenaufruf technische Verbindungsdaten und speichert insbesondere IP-Adressen für Sicherheitszwecke. Das geschieht auch ohne GitHub-Login. Die Bereitstellung und Absicherung dieser Informationsseite dient dem berechtigten Interesse an einer erreichbaren Projektdokumentation. Weitere Angaben zu Empfängern, internationaler Verarbeitung, Speicherkriterien und Rechten stehen in der <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub-Datenschutzerklärung</a>; die IP-Protokollierung beschreibt GitHub auch in seiner <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages">Pages-Dokumentation</a>.</p>
-<p>Diese Website ist vom lokalen Velvet-Backend getrennt. Ihr Aufruf übermittelt keine lokale Bibliothek oder Velvet-Anmeldesitzung an GitHub.</p>
+<section id="website"><h2>9. Besuch dieser GitHub-Pages-Seite</h2>
+<p>Diese öffentliche Dokumentation wird über <strong>GitHub Pages</strong> bereitgestellt. Sie enthält kein Tracking, keine Analyse-Skripte, keine externen Schriftarten und keine eingebetteten Player. Die Seite selbst setzt keine Cookies und legt keine Daten im Browser-Speicher ab.</p>
+<p>GitHub verarbeitet beim Seitenaufruf technische Verbindungsdaten und speichert insbesondere IP-Adressen für Sicherheitszwecke, auch ohne GitHub-Login. Die Bereitstellung und Absicherung dieser Informationsseite dient dem berechtigten Interesse an einer erreichbaren Projektdokumentation. Weitere Angaben zu Empfängern, internationaler Verarbeitung, Speicherkriterien und Rechten stehen in der <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub-Datenschutzerklärung</a>. Die IP-Protokollierung beschreibt GitHub auch in seiner <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages">Pages-Dokumentation</a>.</p>
+<p>Diese Website ist vom Velvet-Server getrennt. Ihr Aufruf übermittelt keine Bibliothek und keine Velvet-Anmeldesitzung an GitHub.</p>
 </section>
 
-<section id="kontakt"><h2>9. Kontakt zum Datenschutz</h2>
+<section id="kontakt"><h2>10. Kontakt zum Datenschutz</h2>
 <p>Bei Fragen oder Anliegen zur Verarbeitung deiner Daten erreichst du Mika Spangenberg unter <a href="mailto:privacy.velvetmusic@gmail.com">privacy.velvetmusic@gmail.com</a>.</p>
-<p>Wenn du eine E-Mail sendest, werden deine Absenderadresse, der Inhalt und gegebenenfalls freiwillige weitere Angaben zur Bearbeitung verwendet. Das Postfach wird bei Gmail betrieben; Google verarbeitet die Nachricht und technische Zustelldaten im Rahmen des E-Mail-Dienstes. Dazu gilt ergänzend die <a href="https://policies.google.com/privacy?hl=de">Google-Datenschutzerklärung</a>. Die Kontaktaufnahme ist unabhängig von der lokalen Account-Registrierung.</p>
+<p>Wenn du eine E-Mail sendest, werden deine Absenderadresse, der Inhalt und gegebenenfalls freiwillige weitere Angaben zur Bearbeitung verwendet. Das Postfach wird bei Gmail betrieben. Google verarbeitet die Nachricht und technische Zustelldaten im Rahmen des E-Mail-Dienstes; ergänzend gilt die <a href="https://policies.google.com/privacy?hl=de">Google-Datenschutzerklärung</a>. Die Kontaktaufnahme ist unabhängig von einem Velvet-Account.</p>
 </section>
 
-<section id="aenderungen"><h2>10. Änderungen dieser Erklärung</h2>
-<p>Ändern sich Funktionen, Empfänger oder Verarbeitungszwecke, wird diese Seite entsprechend aktualisiert. Das Datum am Anfang kennzeichnet den beschriebenen Stand. Erforderliche Einwilligungen werden nicht durch eine bloße Textänderung ersetzt.</p>
-<p>Vor einem öffentlichen Release und insbesondere vor dem Start eines öffentlichen Account-/Cloud-Backends müssen die tatsächlichen Verantwortlichen- und Kontaktangaben, Hosting-Anbieter, Standorte, Übermittlungsgrundlagen, Löschabläufe und Speicherfristen erneut geprüft und ergänzt werden. Diese Erklärung stellt einen geplanten Cloud-Dienst nicht als bereits vorhanden dar.</p>
+<section id="aenderungen"><h2>11. Änderungen dieser Erklärung</h2>
+<p>Ändern sich Funktionen, Empfänger, Speicherorte oder Verarbeitungszwecke, wird diese Seite entsprechend aktualisiert. Das Datum am Anfang kennzeichnet den beschriebenen Stand. Erforderliche Einwilligungen werden nicht durch eine bloße Textänderung ersetzt.</p>
+<p>Diese Fassung ersetzt die Fassung vom 25. September 2026. Diese beschrieb einen Entwicklungsstand ohne Velvet-Server.</p>
 </section>
 </article></div></main>
-<footer class="site-footer"><div class="wrap"><span>Velvet: Music Player · Stand 25. September 2026</span><a href="#inhalt">Zurück nach oben</a></div></footer>
-
-
+<footer class="site-footer"><div class="wrap"><span>Velvet: Music Player · Stand 5. November 2026</span><a href="#inhalt">Zurück nach oben</a></div></footer>
 </body></html>

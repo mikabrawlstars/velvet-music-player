@@ -39,10 +39,9 @@ The German privacy policy for **Velvet: Music Player** is available at:
 
 **[Datenschutzerklärung](https://mikabrawlstars.github.io/velvet-music-player/privacy/)**
 
-It describes the current local-backend development version. No public Velvet
-account or cloud backend is currently operated. Review and update the policy
-before a public app release or any cloud rollout, including complete controller
-contact information and the actual hosting, retention and deletion arrangements.
+It covers Velvet 2.14 and later, including the optional Velvet account and
+library sync server (Oracle Cloud Infrastructure, Frankfurt) and Google sign-in.
+Update it whenever data flows, recipients, hosting or retention periods change.
 
 ## Documentation website
 
