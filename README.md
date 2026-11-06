@@ -37,7 +37,7 @@ This repository is the public project overview. It contains documentation only; 
 
 The German privacy policy for **Velvet: Music Player** is available at:
 
-**[Datenschutzerklärung](https://mikabrawlstars.github.io/velvet-music-player/privacy/)**
+**[Datenschutzerklärung](https://mikabrawlstars.github.io/velvet-music-player/privacy/)** · English translation: **[Privacy Policy](https://mikabrawlstars.github.io/velvet-music-player/privacy/en/)** (the German version prevails)
 
 It covers Velvet 2.14 and later, including the optional Velvet account and
 library sync server (Oracle Cloud Infrastructure, Frankfurt) and Google sign-in.
@@ -51,7 +51,7 @@ The `.nojekyll` marker disables Jekyll processing; no dependencies, build workfl
 external fonts or client scripts are required.
 
 - Project page: `docs/index.html`
-- Privacy policy: `docs/privacy/index.html`
+- Privacy policy: `docs/privacy/index.html` (German), `docs/privacy/en/index.html` (English translation; keep both in sync)
 - Shared styles: `docs/assets/site.css`
 
 Keep this repository documentation-only. Never add application source code,
